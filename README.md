@@ -1,2 +1,4 @@
 # CourseraAlgorithms
-Repo to back up algorithms coursera course content
+Repo to back up algorithms Coursera course content.
+
+Will be organized in the following fashion...
