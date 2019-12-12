@@ -8,10 +8,10 @@ public class MaxPairwiseProductStressTest {
 		while(true) {
 			int n = (int)(Math.random() * 100 + 2); // generate size of array between 2 and 100 inclusive
 			System.out.println("Generating " + n + " numbers..");			
-			int [] ranNumbers = new int[n];
+			long [] ranNumbers = new long[n];
 			
 			for(int i = 0; i < n; i++) {
-				ranNumbers[i] = (int)(Math.random() * 50 + 1);// generate numbers between 1 and 50 inclusive
+				ranNumbers[i] = (long)(Math.random() * 50 + 1);// generate numbers between 1 and 50 inclusive
 				System.out.print(ranNumbers[i] + " "); // print the number
 			}			
 			System.out.println();

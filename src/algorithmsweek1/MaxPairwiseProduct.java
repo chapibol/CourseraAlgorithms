@@ -15,7 +15,7 @@ public class MaxPairwiseProduct {
 	        System.out.println(getMaxPairwiseProductFast(numbers));
 	}
 	 
-    static long getMaxPairwiseProduct(int[] numbers) {
+    public static long getMaxPairwiseProduct(long[] numbers) {
         long maxProduct = 0;
         int n = numbers.length;
 
@@ -28,7 +28,7 @@ public class MaxPairwiseProduct {
         return maxProduct;
     }
     
-    static long getMaxPairwiseProductFast(long [] numbers) {
+    public static long getMaxPairwiseProductFast(long [] numbers) {
     	Arrays.sort(numbers);
     	int lastIndex = numbers.length - 1;
     	return numbers[lastIndex - 1] * numbers[lastIndex];
