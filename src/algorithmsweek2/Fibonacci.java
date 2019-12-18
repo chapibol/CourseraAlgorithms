@@ -17,16 +17,18 @@ public class Fibonacci {
     }
 
     private static long fastCalcFib(int n) {
-        // n >= 2
-        long[] numbers = new long[n];
-        numbers[0] = 0;
-        numbers[1] = 1;
+        if(n <= 1){
+            return n;
+        }else{
+            long[] numbers = new long[n];
+            numbers[0] = 0;
+            numbers[1] = 1;
 
-        for(int i = 2; i < numbers.length; i++){
-            numbers[i] = numbers[i - 1] + numbers[i - 2];
+            for(int i = 2; i < numbers.length; i++){
+                numbers[i] = numbers[i - 1] + numbers[i - 2];
+            }
+            return numbers[n - 1]; // return the last element which coincides with n
         }
-        return numbers[n - 1]; // return the last element which coincides with n
-
     }
 
 }
