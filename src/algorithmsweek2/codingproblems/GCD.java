@@ -21,6 +21,11 @@ public class GCD {
         int a = scanner.nextInt();
         int b = scanner.nextInt();
 
-        System.out.println(gcdNaive(a, b));
+        System.out.println(gcd(a, b));
+    }
+
+    private static int gcd(int a, int b){
+        if(b == 0) return a;
+        return gcd(b,  a % b);
     }
 }
