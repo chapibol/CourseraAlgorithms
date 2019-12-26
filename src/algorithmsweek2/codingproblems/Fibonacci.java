@@ -1,4 +1,4 @@
-package algorithmsweek2;
+package algorithmsweek2.codingproblems;
 
 import java.util.Scanner;
 
