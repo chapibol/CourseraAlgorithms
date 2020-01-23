@@ -1,5 +1,7 @@
 package codingexcercises;
 
+import java.util.ArrayList;
+
 public class CodingBat {
 
 	public static void main(String[] args) {
@@ -11,7 +13,6 @@ public class CodingBat {
 		System.out.println("small = " + small + " big = " + big + " goal = " + goal);
 		System.out.println(canMakeBrick);
 	}
-
 
 	public static boolean makeBricks(int small, int big, int goal) {
 		int bigSum = big * 5;
@@ -37,17 +38,24 @@ public class CodingBat {
 		}
 	}
 
-	public String getSandwich(String str) {
+	public static String getSandwich(String str) {
+		ArrayList<Integer> locations = new ArrayList<>();
 
-		int i = 0;
-		String locationStr = "";
-		while(i < str.length() && i != -1){
-			i = str.indexOf("bread", i);
-			locationStr = locationStr + i;
-			i = i + 5;
+		int i = str.indexOf("bread");
+		if(i == -1){
+			return "";
+		}else{
+			locations.add(i);
+			while(i >= 0 && i + 5 < str.length()){
+				i = str.indexOf("bread", i + 5);
+				locations.add(i);
+			}
+			locations.removeIf(n -> (n == -1));
+			if(locations.size() > 1){
+				return str.substring(locations.get(0) + 5, locations.get(locations.size() - 1));
+			}else{
+				return "";
+			}
 		}
-
-		return locationStr;
-
 	}
 }
