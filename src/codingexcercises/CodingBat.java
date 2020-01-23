@@ -51,9 +51,9 @@ public class CodingBat {
 				locations.add(i);
 			}
 			locations.removeIf(n -> (n == -1));
-			if(locations.size() > 1){
+			if(locations.size() > 1){// at least 2 breads need to be found and then return the string sadwiched in between
 				return str.substring(locations.get(0) + 5, locations.get(locations.size() - 1));
-			}else{
+			}else{// if only one bread found then return empty
 				return "";
 			}
 		}
