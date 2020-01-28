@@ -14,6 +14,7 @@ public class FractionalKnapsack {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int capacity = scanner.nextInt();
+        scanner.close();
         int[] values = new int[n];
         int[] weights = new int[n];
         for (int i = 0; i < n; i++) {
