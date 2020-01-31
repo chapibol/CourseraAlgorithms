@@ -1,17 +1,25 @@
 package algorithmsweek3.codingproblems;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class FractionalKnapsack {
 
     private static double getOptimalValue(int capacity, KnapsackItem[] kItems) {
         double value = 0;
-        //write your code here
+
         for (int i = 0; i < kItems.length; i++) {
            System.out.println("Printing Item: " + i + " value: " + kItems[i].getItemValue());
            value += kItems[i].getItemValue();
         }
+        //write your code here
         // sort the array by itemValue in descending order
+        Arrays.sort(kItems, Comparator.comparing(KnapsackItem::getItemValue).reversed());
+        for (int i = 0; i < kItems.length; i++) {
+            System.out.println("Printing sorted items: " + i + " value: " + kItems[i].getItemValue());
+        }
+
 
         System.out.println("Final added value: " + value + " the capacity: " + capacity);
 
