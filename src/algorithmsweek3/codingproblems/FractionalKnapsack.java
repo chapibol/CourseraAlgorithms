@@ -8,21 +8,16 @@ public class FractionalKnapsack {
 
     private static double getOptimalValue(int capacity, KnapsackItem[] kItems) {
         double value = 0;
-
-        for (int i = 0; i < kItems.length; i++) {
-           System.out.println("Printing Item: " + i + " value: " + kItems[i].getItemValue());
-           value += kItems[i].getItemValue();
-        }
         //write your code here
         // sort the array by itemValue in descending order
         Arrays.sort(kItems, Comparator.comparing(KnapsackItem::getItemValue).reversed());
-        for (int i = 0; i < kItems.length; i++) {
-            System.out.println("Printing sorted items: " + i + " value: " + kItems[i].getItemValue());
+        for (KnapsackItem kItem : kItems) {
+            if (capacity == 0) break;
+            double amount = Math.min(capacity, kItem.getWeight());
+            value += amount * kItem.itemValue;
+            capacity -= amount;
         }
-
-
-        System.out.println("Final added value: " + value + " the capacity: " + capacity);
-
+        System.out.println("Value gathered is: " + value);
         return value;
     }
 
@@ -37,7 +32,7 @@ public class FractionalKnapsack {
             items[i] = new KnapsackItem(scanner.nextInt(), scanner.nextInt());
         }
         scanner.close();
-        System.out.println(getOptimalValue(capacity, items));
+        System.out.printf("%.4f", getOptimalValue(capacity, items));
     }
 
     private static class KnapsackItem {
