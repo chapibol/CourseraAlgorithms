@@ -8,16 +8,16 @@ public class FractionalKnapsack {
 
     private static double getOptimalValue(int capacity, KnapsackItem[] kItems) {
         double value = 0;
-        //write your code here
+
         // sort the array by itemValue in descending order
         Arrays.sort(kItems, Comparator.comparing(KnapsackItem::getItemValue).reversed());
+        // after sorting we know the most valuable items are first so iterate until knapsack is filled.
         for (KnapsackItem kItem : kItems) {
             if (capacity == 0) break;
-            double amount = Math.min(capacity, kItem.getWeight());
-            value += amount * kItem.itemValue;
-            capacity -= amount;
+            double weightAmount = Math.min(capacity, kItem.getWeight());
+            value += weightAmount * kItem.itemValue;
+            capacity -= weightAmount;
         }
-        System.out.println("Value gathered is: " + value);
         return value;
     }
 
@@ -28,7 +28,7 @@ public class FractionalKnapsack {
         KnapsackItem [] items = new KnapsackItem[n];
 
         for (int i = 0; i < n; i++) {
-            // get value first and then weight for the item
+            // get value first and then weight for the item in the constructor
             items[i] = new KnapsackItem(scanner.nextInt(), scanner.nextInt());
         }
         scanner.close();
