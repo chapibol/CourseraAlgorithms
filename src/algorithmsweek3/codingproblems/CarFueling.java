@@ -20,4 +20,3 @@ public class CarFueling {
         System.out.println(computeMinRefills(dist, tank, stops));
     }
 }
-
