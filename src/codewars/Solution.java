@@ -6,13 +6,23 @@ import java.util.Set;
 public class Solution {
 
     public static void main (String [] args) {
-        // call method here
-        String str = "The quick brown box jumps over the lazy dog.";
-        for(char c :str.toCharArray()){
 
-            System.out.println(c + " is type: " + Character.getType(c));
+
+
+    }
+
+    public static String whoLikesIt(String... names) {
+        //Do your magic here
+        if(names.length == 0){
+            return "no one likes this";
         }
 
+        System.out.println(names[0] + " likes this");
+        String result = "";
+        for(String name: names){
+            result = result + name;
+        }
+        return result;
     }
 
     public static int solution(int number) {
@@ -38,6 +48,13 @@ public class Solution {
     }
 
     public static boolean check(String sentence){
+
+//        String str = "The quick brown box jumps over the lazy dog.";
+//        for(char c :str.toCharArray()){
+//
+//            System.out.println(c + " is type: " + Character.getType(c));
+//        }
+
         Set<Character> chars = new HashSet<>();
 
         for(char c: sentence.toCharArray()){
